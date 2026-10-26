@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LANY soft world tour – Jakarta Day 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);
+--bg:#fff;--soft:#f5f7ff;--tx:#0b1030;--mut:#5d6488;--ac:#3b5bff;--ln:#e6e9f7;--c:#00c2ff;--v:#8b5cf6;--p:#ff4fa3;--y:#ffb400;
+--grad:linear-gradient(90deg,#00c2ff,#3b5bff,#8b5cf6,#ff4fa3)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.6 "Poppins",system-ui,-apple-system,sans-serif;overflow-x:hidden;padding-bottom:120px}
+main{max-width:720px;margin:0 auto;padding:0 16px;position:relative}
+section{display:none}section.on{display:block}
+.hero{position:relative;text-align:center;padding:46px 8px 22px}
+.orb{position:absolute;border-radius:50%;filter:blur(50px);opacity:.6;animation:float 9s ease-in-out infinite;z-index:-1}
+.o1{width:230px;height:230px;background:var(--c);left:-60px;top:0}.o2{width:220px;height:220px;background:var(--p);right:-50px;top:50px;animation-delay:-3s}.o3{width:200px;height:200px;background:var(--y);left:38%;top:170px;animation-delay:-6s;opacity:.4}
+.pill{display:inline-flex;gap:6px;align-items:center;font-size:12px;font-weight:600;background:#fff;border:1px solid var(--ln);padding:6px 14px;border-radius:99px;box-shadow:0 6px 18px rgba(59,91,255,.14)}
+h1{margin:16px 0 4px;font-size:clamp(52px,16vw,96px);font-weight:800;letter-spacing:-.05em;line-height:.95}
+h1 span{display:block;font-size:.42em;letter-spacing:-.02em;background:var(--grad);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite}
+.sub{color:var(--mut)}
+.cd{display:inline-flex;align-items:center;gap:9px;margin-top:16px;padding:10px 18px;border-radius:99px;background:var(--tx);color:#fff;font-weight:600;font-size:13px;box-shadow:0 12px 26px rgba(11,16,48,.28)}
+.cd::before{content:"";width:9px;height:9px;border-radius:50%;background:#37e08a;animation:pulse 1.6s infinite}
+.persp{perspective:900px;margin:20px 0}
+.ticket{position:relative;display:flex;border-radius:30px;color:#fff;background:linear-gradient(120deg,#00c2ff,#3b5bff 45%,#8b5cf6 75%,#ff4fa3);background-size:160% 160%;animation:shine2 8s ease-in-out infinite;box-shadow:0 30px 60px rgba(59,91,255,.35);transition:transform .15s;overflow:hidden}
+.ticket::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.35) 50%,transparent 65%);transform:translateX(-120%);animation:sweep 5s infinite}
+.tk-main{flex:1;padding:22px 22px 20px}
+.tk-top{display:flex;justify-content:space-between;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.9}
+.tk-big{font-size:clamp(38px,11vw,60px);font-weight:800;letter-spacing:-.04em;line-height:1;margin:14px 0 12px}
+.seats{display:flex;gap:10px}
+.seats div{background:rgba(255,255,255,.22);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.4);border-radius:16px;padding:8px 14px}
+.seats small{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.seats b{font-size:20px;font-weight:700}
+.tk-foot{margin-top:14px;font-size:12px;opacity:.92}
+.tk-stub{width:86px;border-left:2px dashed rgba(255,255,255,.7);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:10px}
+.tk-stub::before,.tk-stub::after{content:"";position:absolute;right:calc(86px - 10px);width:20px;height:20px;border-radius:50%;background:var(--bg)}
+.tk-stub::before{top:-10px}.tk-stub::after{bottom:-10px}
+.bars{width:46px;height:92px;background:repeating-linear-gradient(90deg,#fff 0 2px,transparent 2px 5px,#fff 5px 9px,transparent 9px 11px);opacity:.9;border-radius:4px}
+.tk-stub small{font-size:10px;letter-spacing:.14em;font-weight:600}
+.bento{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tile{border-radius:26px;padding:18px;border:1px solid rgba(11,16,48,.06);animation:up .6s cubic-bezier(.2,.8,.2,1) both;transition:transform .25s,box-shadow .25s}
+.tile:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(59,91,255,.16)}
+.full{grid-column:1/-1}
+.mint{background:#e6fbf1}.lilac{background:#efe9ff}.peach{background:#fff0e4}.sky{background:#e5f5ff}.rose{background:#ffe9f3}
+.tile h3{margin:0 0 2px;font-size:13px;font-weight:600;color:var(--mut)}
+.tile .big{font-size:20px;font-weight:700;line-height:1.25}
+.cdn{display:flex;gap:8px;margin-top:10px}
+.cdn div{flex:1;background:#fff;border-radius:14px;text-align:center;padding:8px 0;box-shadow:0 4px 12px rgba(11,16,48,.06)}
+.cdn b{display:block;font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.1}
+.cdn small{font-size:10px;color:var(--mut)}
+.tile ul{margin:8px 0 0;padding-left:18px;font-size:13px}
+.hd{display:flex;align-items:center;gap:8px;margin:26px 4px 6px;font-size:16px;font-weight:700}
+.hd i{width:10px;height:10px;border-radius:50%;background:var(--grad)}
+.tl{position:relative;margin-left:6px}
+.tl::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:var(--ln)}
+.ti{position:relative;display:flex;gap:14px;padding:6px 0;animation:up .5s both}
+.dot{flex:0 0 20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--ln);margin-top:10px;z-index:1;transition:.3s}
+.tc{flex:1;background:#fff;border:1px solid var(--ln);border-radius:18px;padding:10px 14px;box-shadow:0 2px 6px rgba(11,16,48,.04);transition:.25s}
+.tc:hover{transform:translateX(4px)}
+.tt{font-size:12px;font-weight:700;color:var(--ac);font-variant-numeric:tabular-nums}
+.tc small{display:block;color:var(--mut);font-size:12.5px}
+.ti.done{opacity:.4}.ti.done .dot{background:var(--ac);border-color:var(--ac)}
+.ti.now .dot{background:var(--p);border-color:#fff;box-shadow:0 0 0 4px rgba(255,79,163,.3);animation:pulse2 1.6s infinite}
+.ti.now .tc{border-color:var(--ac);background:linear-gradient(135deg,#eef2ff,#fdf0f8)}
+.tag{font-style:normal;font-size:10px;font-weight:700;padding:1px 8px;border-radius:99px;margin-left:6px;color:#fff;background:var(--v)}
+.tag.y{background:var(--p)}
+.ring{display:flex;align-items:center;gap:16px}
+.ring svg{width:84px;height:84px;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:9;stroke-linecap:round}
+#rf{stroke:url(#g);stroke-dasharray:226;stroke-dashoffset:226;transition:stroke-dashoffset .6s}
+.ring b{font-size:28px;font-weight:800;display:block;line-height:1.1}
+.card{background:#fff;border:1px solid var(--ln);border-radius:22px;padding:6px 16px;margin:10px 0;animation:up .5s both}
+label{display:flex;gap:12px;align-items:flex-start;padding:9px 0;cursor:pointer}
+label+label{border-top:1px solid var(--soft)}
+input[type=checkbox]{width:20px;height:20px;accent-color:var(--v);margin-top:3px;flex:none}
+input:checked+span{text-decoration:line-through;opacity:.5}
+.song{display:flex;gap:14px;align-items:flex-start;padding:12px 16px;padding-block:12px}
+.n{color:#fff;font-weight:700;min-width:34px;height:34px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:12.5px;background:linear-gradient(135deg,#00c2ff,#3b5bff)}
+.song:nth-child(4n+2) .n{background:linear-gradient(135deg,#3b5bff,#8b5cf6)}.song:nth-child(4n+3) .n{background:linear-gradient(135deg,#8b5cf6,#ff4fa3)}.song:nth-child(4n) .n{background:linear-gradient(135deg,#ff4fa3,#ffb400)}
+.song p{margin:1px 0 7px;color:var(--mut);font-size:13px}
+.badge{font-size:11px;font-weight:600;background:#eef2ff;color:var(--ac);border-radius:99px;padding:3px 11px;text-decoration:none;display:inline-block;margin-right:4px;transition:.2s}
+.badge:hover{background:var(--ac);color:#fff}
+.marq{overflow:hidden;white-space:nowrap;margin:0 -16px 8px;padding:10px 0;background:var(--soft)}
+.track{display:inline-block;animation:scroll 70s linear infinite;font-weight:600;font-size:13px;color:var(--mut)}.track b{color:var(--p);margin:0 16px}
+.ico{font-size:26px;display:block;margin-bottom:4px}
+.note{font-size:12.5px;color:var(--mut)}
+a{color:var(--ac)}
+.reset{margin:6px 0;padding:9px 18px;border-radius:99px;border:1px solid var(--ln);background:#fff;font:600 13px "Poppins",sans-serif;cursor:pointer}
+.reset:hover{background:var(--tx);color:#fff}
+.dock{position:fixed;left:0;right:0;margin:0 auto;max-width:720px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;gap:8px;padding:0 14px;pointer-events:none}
+.dock button{pointer-events:auto;flex:1;min-width:0;border:1px solid var(--ln);background:#fff;border-radius:14px;padding:13px 4px;font:600 12.5px "Poppins",sans-serif;color:var(--mut);cursor:pointer;box-shadow:0 8px 20px rgba(11,16,48,.1);transition:.2s}
+.dock button:hover{color:var(--tx);transform:translateY(-2px)}
+.dock button.on{background:var(--grad);background-size:200% auto;animation:shine 4s linear infinite;border-color:transparent;color:#fff;box-shadow:0 10px 24px rgba(139,92,246,.4)}
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translate(18px,26px) scale(1.1)}}
+@keyframes shine{to{background-position:200% center}}
+@keyframes shine2{50%{background-position:100% 100%}}
+@keyframes sweep{to{transform:translateX(120%)}}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(55,224,138,0);opacity:.6}}
+@keyframes pulse2{50%{box-shadow:0 0 0 9px rgba(255,79,163,0)}}
+@media (max-width:420px){.bento{grid-template-columns:1fr}.dock{gap:6px;padding:0 10px}.dock button{font-size:11.5px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<section id="home" class="on">
+<div class="hero">
+<i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i>
+<span class="pill">✦ Live concert guide · Jakarta Day 2</span>
+<h1>LANY<span>soft world tour</span></h1>
+<div class="sub">Jumat, 30 Oktober 2026 · Indonesia Arena, GBK</div>
+<div class="cd" id="cd">…</div>
+</div>
+
+<div class="persp" id="persp"><div class="ticket" id="tk">
+<div class="tk-main">
+<div class="tk-top"><span>LANY · soft world tour</span><span>CAT 2</span></div>
+<div class="tk-big">Door 4L</div>
+<div class="seats"><div><small>Seat</small><b>41-611</b></div><div><small>Seat</small><b>41-612</b></div></div>
+<div class="tk-foot">Indonesia Arena · 30 Okt 2026 · Show 20.00 WIB</div>
+</div>
+<div class="tk-stub"><div class="bars"></div><small>ADMIT 2</small></div>
+</div></div>
+
+<div class="bento">
+<div class="tile mint full"><h3 id="wl">Tukar wristband</h3><div class="big">28 Okt · 10.00–12.00 · Basket Hall, GBK</div><div class="cdn" id="wc"></div></div>
+<div class="tile lilac full"><h3>Konser dimulai dalam</h3><div class="big">LANY perform · 20.00 WIB</div><div class="cdn" id="cc"></div></div>
+<div class="tile peach"><h3>Bawa saat tukar</h3><ul><li>Photo ID (KTP/SIM)</li><li>E-voucher tiket.com</li></ul></div>
+<div class="tile sky"><h3>Sekarang</h3><div class="big" id="nowc">Belum hari H</div><small class="note" id="nowd">Fokus siapkan tas &amp; tukar wristband.</small></div>
+<div class="tile rose full"><h3>Siap berangkat?</h3>
+<div class="ring"><svg viewBox="0 0 84 84"><defs><linearGradient id="g"><stop offset="0" stop-color="#00c2ff"/><stop offset="1" stop-color="#ff4fa3"/></linearGradient></defs><circle cx="42" cy="42" r="36" stroke="#fff"/><circle id="rf" cx="42" cy="42" r="36"/></svg>
+<div><b id="pct">0%</b><span class="note">checklist selesai. Buka tab Checklist.</span></div></div></div>
+</div>
+</section>
+
+<section id="jadwal">
+<div class="hd"><i></i>Hari H · Jadwal konser</div>
+<div class="note" style="margin:0 4px 8px">Jam WIB sesuai info yang kamu kirim. Tiket kamu CAT 2.</div>
+<div class="tl" id="tl-show"></div>
+<div class="hd"><i></i>Rute perjalanan</div>
+<div class="note" style="margin:0 4px 8px">Estimasi dihitung mundur dari tiba di Stasiun Bogor pukul 16.00. Tiba di arena sekitar 18.15, masih ±1 jam 45 menit sebelum LANY tampil.</div>
+<div class="tl" id="tl-route"></div>
+</section>
+
+<section id="cek">
+<div class="hd"><i></i>Checklist <span class="note" id="cnt" style="margin-left:auto;font-weight:500"></span></div>
+<div id="lists"></div>
+<button class="reset" id="reset">Reset checklist</button>
+</section>
+
+<section id="set">
+<div class="hd"><i></i>Setlist · 26 lagu</div>
+<div class="marq"><div class="track" id="mq"></div></div>
+<div class="note" style="margin:0 4px 8px">Urutan bisa berubah di Jakarta. Ringkasan hanya gambaran tema, bukan lirik (dilindungi hak cipta). Tombol lirik membuka pencarian Genius.</div>
+<div id="songs"></div>
+</section>
+
+<section id="info">
+<div class="hd"><i></i>General info</div>
+<div class="bento">
+<div class="tile rose"><span class="ico">🎟️</span><b>Masuk dengan wristband saja</b><small class="note"><br>Gunakan wristband untuk masuk venue.</small></div>
+<div class="tile sky"><span class="ico">🚫</span><b>Tablet dilarang</b><small class="note"><br>Jangan bawa tablet.</small></div>
+<div class="tile peach"><span class="ico">🧴</span><b>Parfum bukan botol kaca</b><small class="note"><br>Pakai botol kecil non-kaca.</small></div>
+<div class="tile mint"><span class="ico">🎒</span><b>Tas lebih kecil dari A4</b><small class="note"><br>Tas besar berisiko tidak boleh masuk.</small></div>
+</div>
+<div class="hd"><i></i>Penukaran wristband</div>
+<div class="tile lilac"><b>28 Oktober · 10.00–12.00 WIB</b><br>Basket Hall, GBK.<br>Siapkan photo ID (KTP/SIM/ID card) dan e-voucher tiket.com dari lead booker.</div>
+<div class="hd"><i></i>Tempat duduk</div>
+<div class="tile sky"><b>CAT 2 · Door 4L</b><br>Seat 41-611 dan 41-612</div>
+<div class="hd"><i></i>Tips cepat</div>
+<div class="card"><label style="cursor:default"><span>MRT/KRL biasanya berhenti beroperasi sekitar tengah malam. Siapkan rencana pulang.</span></label><label style="cursor:default"><span>Screenshot e-voucher dan simpan saat sinyal ramai.</span></label><label style="cursor:default"><span>Janjian titik kumpul dengan teman kalau sinyal hilang.</span></label></div>
+<p class="note">Pantau resmi: <a href="https://lanyinjakarta2026.com" target="_blank" rel="noopener">lanyinjakarta2026.com</a>. Beberapa sumber menyebut dua malam konser (29–30 Okt); pastikan tanggal di tiketmu.</p>
+</section>
+</main>
+
+<nav class="dock" id="dock">
+<button data-t="home" class="on">Home</button><button data-t="jadwal">Jadwal</button><button data-t="cek">Checklist</button><button data-t="set">Setlist</button><button data-t="info">Info</button>
+</nav>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+function D(d,h){return new Date("2026-10-"+d+"T"+h+":00+07:00")}
+function two(n){return (n<10?"0":"")+n}
+var show=[
+["13:00","15:00","Main gate dibuka","Area venue mulai dibuka",""],
+["15:00","16:00","VIP experience: doors","Khusus tiket VIP","vip"],
+["16:00","17:45","VIP experience dimulai","Khusus tiket VIP","vip"],
+["17:45","18:00","The Soft VIP package: doors","Khusus paket The Soft VIP","vip"],
+["18:00","19:00","Doors open semua kategori","CAT 2 masuk lewat Door 4L, tunjukkan wristband","you"],
+["19:00","20:00","Opening act","Cari tempat, siap-siap sing-along",""],
+["20:00","22:30","LANY perform 🎤","Show utama sekitar 2 jam",""]];
+var route=[
+["11:45","13:30","Berangkat Citra Raya → Mall Spark","Mobil/ojol via tol, 1,5–2 jam",""],
+["13:30","13:50","Tiba di Mall Spark","Makan, toilet, istirahat",""],
+["13:50","14:00","Jalan kaki → MRT Istora","±10 menit",""],
+["14:00","14:15","MRT Istora → Dukuh Atas BNI","±10 menit + tunggu",""],
+["14:15","14:40","Jalan kaki → KRL Sudirman","10–15 menit, tap in",""],
+["14:40","16:00","KRL Sudirman → Stasiun Bogor","±1 jam 15 menit",""],
+["16:00","16:15","Tiba di Stasiun Bogor","Langsung balik ke peron arah Jakarta",""],
+["16:15","17:30","KRL Bogor → Sudirman","Jam pulang kantor, siap berdiri",""],
+["17:30","17:50","Jalan kaki → MRT Dukuh Atas","10–15 menit",""],
+["17:50","18:05","MRT Dukuh Atas → Istora","±10 menit + tunggu",""],
+["18:05","18:15","Jalan kaki → Indonesia Arena","±10 menit",""],
+["18:15","19:00","Tiba di Indonesia Arena","Antre masuk lewat Door 4L",""]];
+var G=[
+["Tukar wristband · 28 Okt",["Datang ke Basket Hall, GBK (10.00–12.00)","Photo ID (KTP/SIM/ID card)","E-voucher tiket.com"]],
+["Concert essentials",["Concert wristband","Tas lebih kecil dari A4","HP dengan baterai penuh"]],
+["Isi tas konser",["Kipas portable","Powerbank","Tissue","Bye-bye fever","Dompet (ATM, KTP, uang cash kecil &amp; besar)","Snack mungil (Beng Beng, permen, Better, Sari Roti)","Parfum kecil (bukan botol kaca)","Makeup","TWS"]],
+["Beli dulu 🛒",["Bye-bye fever","Snack mungil"]],
+["Perjalanan",["Saldo kartu MRT/KRL cukup","Cek jadwal MRT/KRL terakhir","Rencana pulang malam (ojol/taksi)"]]];
+var songs=[
+["Soft","Pembuka bernuansa lembut yang menyetel suasana seluruh malam.",["Soft"]],
+["Why","Mempertanyakan alasan di balik perasaan dan hubungan yang rumit.",["Why"]],
+["Make Me Forget","Keinginan untuk melupakan seseorang beserta rasa sakitnya.",["Make Me Forget"]],
+["you!","Pengakuan sederhana dan manis tentang seseorang yang spesial.",["you!"]],
+["Thick and Thin","Janji setia untuk tetap ada di masa baik maupun buruk.",["Thick and Thin"]],
+["dna","Rasa terhubung begitu dalam dengan seseorang.",["dna"]],
+["I Don’t Wanna Love You Anymore","Lelah mencintai seseorang dan ingin melepaskan.",["I Don't Wanna Love You Anymore"]],
+["Prettiest Thing I’ve Ever Seen","Kekaguman pada seseorang yang terasa begitu indah.",["Prettiest Thing I've Ever Seen"]],
+["Know You Naked","Keintiman dan mengenal seseorang dari sisi paling jujur.",["Know You Naked"]],
+["When Did You Stop Loving Me?","Mempertanyakan kapan cinta mulai memudar.",["When Did You Stop Loving Me"]],
+["Destiny","Merenungkan takdir dan apakah dua orang memang ditakdirkan bersama.",["Destiny"]],
+["anything 4 u","Rela melakukan apa saja demi orang tersayang.",["anything 4 u"]],
+["Stuck","Terjebak dalam perasaan atau hubungan yang sulit dilepaskan.",["Stuck"]],
+["Sound Of Rain","Suasana melankolis dan kenangan yang datang bersama hujan.",["Sound Of Rain"]],
+["Good Parts","Mengenang sisi indah hubungan di tengah kekurangannya.",["Good Parts"]],
+["Let Me Know","Meminta kejelasan perasaan dari seseorang.",["Let Me Know"]],
+["Super Far / Mean It","Medley: jarak dan rindu yang terasa jauh, lalu ketulusan perasaan.",["Super Far","Mean It"]],
+["Last Forever / Act My Age","Medley: harapan cinta yang abadi dan sisi kekanak-kanakan dalam hubungan.",["Last Forever","Act My Age"]],
+["13","Lagu bernuansa nostalgia dan kenangan.",["13"]],
+["ILYSB","Lagu andalan tentang jatuh cinta yang terasa terlalu cepat dan dalam. Siap sing-along!",["ILYSB"]],
+["pink skies","Menyadari perasaan di tengah sore yang indah dan bittersweet.",["pink skies"]],
+["Alonica","Lagu dari era terbaru yang jadi favorit penggemar.",["Alonica"]],
+["Thru These Tears","Menangis, bertahan, dan perlahan melewati masa sulit.",["Thru These Tears"]],
+["’Cause You Have To","Tentang melakukan sesuatu karena memang harus, meski berat.",["Cause You Have To"]],
+["Malibu Nights","Sisi gelap dan kesepian setelah patah hati; salah satu lagu paling emosional mereka.",["Malibu Nights"]],
+["XXL","Penutup penuh nostalgia tentang cinta yang membesar dan tak mudah dilupakan.",["XXL"]]];
+
+// tabs
+document.querySelectorAll("#dock button").forEach(function(b){b.onclick=function(){
+document.querySelectorAll("#dock button,section").forEach(function(x){x.classList.remove("on")});
+b.classList.add("on");$(b.dataset.t).classList.add("on");window.scrollTo(0,0)}});
+
+// timelines
+function tl(id,a){var h="";a.forEach(function(s,i){h+='<div class="ti" style="animation-delay:'+i*40+'ms"><i class="dot"></i><div class="tc"><div class="tt">'+s[0]+' – '+s[1]+(s[4]=="vip"?'<em class="tag">VIP</em>':'')+(s[4]=="you"?'<em class="tag y">kamu</em>':'')+'</div><b>'+s[2]+'</b><small>'+s[3]+'</small></div></div>'});$(id).innerHTML=h}
+function mark(id,a){var n=new Date(),els=$(id).children,cur=null;a.forEach(function(s,i){var e=els[i];e.classList.remove("done","now");
+if(n>=D(30,s[1]))e.classList.add("done");else if(n>=D(30,s[0])){e.classList.add("now");cur=s}});return cur}
+tl("tl-show",show);tl("tl-route",route);
+
+// countdowns
+var W0=D(28,"10:00"),W1=D(28,"12:00"),C0=D(30,"20:00");
+function cdh(ms){ms=Math.max(0,ms);var s=Math.floor(ms/1000),p=[Math.floor(s/86400),Math.floor(s%86400/3600),Math.floor(s%3600/60),s%60],l=["hari","jam","menit","detik"];
+return p.map(function(v,i){return '<div><b>'+two(v)+'</b><small>'+l[i]+'</small></div>'}).join("")}
+function tick(){var n=new Date(),hero;
+if(n<W0){$("wl").textContent="Loket wristband buka dalam";$("wc").innerHTML=cdh(W0-n);hero="Tukar wristband dalam "+Math.ceil((W0-n)/36e5)+" jam"}
+else if(n<W1){$("wl").textContent="Loket wristband BUKA, tutup dalam";$("wc").innerHTML=cdh(W1-n);hero="Loket wristband sedang buka!"}
+else{$("wl").textContent="Penukaran wristband";$("wc").innerHTML='<div><b>✓</b><small>Sudah lewat</small></div>'}
+if(n<C0){$("cc").innerHTML=cdh(C0-n);if(!hero)hero="LANY tampil dalam "+Math.ceil((C0-n)/36e5)+" jam"}
+else{$("cc").innerHTML='<div><b>🎤</b><small>Sedang/selesai</small></div>';hero="Selamat menikmati konser ✦"}
+$("cd").textContent=hero;
+var a=mark("tl-show",show),b=mark("tl-route",route),c=b||a;
+if(c){$("nowc").textContent=c[2];$("nowd").textContent=c[3]}
+}
+tick();setInterval(tick,1000);
+
+// checklist
+var KEY="lany-d2-ck2",st={};
+try{st=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){st={}}
+var lh="",tot=0;
+G.forEach(function(g,gi){lh+='<div class="hd" style="font-size:14px"><i></i>'+g[0]+'</div><div class="card">';
+g[1].forEach(function(t,ti){var id=gi+"-"+ti;tot++;lh+='<label><input type="checkbox" data-id="'+id+'"'+(st[id]?" checked":"")+'><span>'+t+'</span></label>'});lh+='</div>'});
+$("lists").innerHTML=lh;
+function upd(){var n=Object.keys(st).filter(function(k){return st[k]}).length,p=Math.round(n/tot*100);
+$("pct").textContent=p+"%";$("rf").style.strokeDashoffset=226*(1-p/100);$("cnt").textContent=n+"/"+tot}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+$("lists").addEventListener("change",function(e){st[e.target.dataset.id]=e.target.checked;save();upd()});
+$("reset").onclick=function(){st={};save();document.querySelectorAll("#lists input").forEach(function(c){c.checked=false});upd()};
+upd();
+
+// setlist
+var sg="";
+songs.forEach(function(s,i){var lk=s[2].map(function(q){return '<a class="badge" href="https://genius.com/search?q='+encodeURIComponent("LANY "+q)+'" target="_blank" rel="noopener">'+(s[2].length>1?q+" · ":"")+'Lihat lirik ↗</a>'}).join("");
+sg+='<div class="card song" style="animation-delay:'+(i%12*40)+'ms"><div class="n">'+(i+1)+'</div><div><b>'+s[0]+'</b><p>'+s[1]+'</p>'+lk+'</div></div>'});
+$("songs").innerHTML=sg;
+var mq=songs.map(function(x){return x[0]}).join("<b>✦</b>");$("mq").innerHTML=mq+"<b>✦</b>"+mq+"<b>✦</b>";
+
+// ticket tilt
+var tk=$("tk"),pp=$("persp");
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches){
+pp.addEventListener("pointermove",function(e){var r=tk.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;tk.style.transform="rotateY("+x*10+"deg) rotateX("+(-y*10)+"deg)"});
+pp.addEventListener("pointerleave",function(){tk.style.transform=""})}
+})();
+</script>
+</body>
+</html>
